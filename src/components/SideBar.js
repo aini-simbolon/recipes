@@ -15,7 +15,7 @@ const SideBar = () => {
         <a href="/Dashboard" className="mb-2 hover:text-green-700 flex items-center">
           <RiDashboardLine className="mr-2" /> Dashboard
         </a>
-        <a href="/recipes" className="mb-2 hover:text-green-700 flex items-center">
+        <a href="/" className="mb-2 hover:text-green-700 flex items-center">
           <FontAwesomeIcon icon={faBook} className="mr-2" /> Recipe
         </a>
       </div>
