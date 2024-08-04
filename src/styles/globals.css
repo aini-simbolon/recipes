@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.modal-box.custom-modal-size {
+  width: 80%;
+  max-width: 400px; 
+  max-height: 500px;
+  border-radius: 1rem; 
+  background-color: white; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 2rem; 
+}
+  
+.recipe {
+  flex-grow: 0;
+  padding-top: 96px;
+  padding-left: 1280px;
+ }
+
+
+  
