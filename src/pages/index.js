@@ -265,67 +265,68 @@ export default function Reader() {
         </a>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 pl-12">
-        <div>
-          <RecipesCard img="food 2.webp" title="Creamy Salad" />
-          <a
-            href="/CreamySalad"
-            className="text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
+    
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 2.webp" title="Creamy Salad" />
+    <a
+      href="/CreamySalad"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
 
-        <div>
-          <RecipesCard img="food 3.jpg" title="Tofu Tomatoes Soup" />
-          <a
-            href="/TofuTomatoesSoup"
-            className="text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 3.jpg" title="Tofu Tomatoes Soup" />
+    <a
+      href="/TofuTomatoesSoup"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
 
-        <div>
-          <RecipesCard img="food 4.jpg" title="Crunch Potatoes" />
-          <a
-            href="/CrunchPotatoes"
-            className="text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 4.jpg" title="Crunch Potatoes" />
+    <a
+      href="/CrunchPotatoes"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
 
-        <div>
-          <RecipesCard img="food 5.webp" title="Mushroom Soup" />
-          <a
-            href="/MushroomSoup"
-            className=" text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 5.webp" title="Mushroom Soup" />
+    <a
+      href="/MushroomSoup"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
 
-        <div>
-          <RecipesCard img="food 6.jpg" title="Raspberry Pancake" />
-          <a
-            href="/RaspberryPancake"
-            className=" text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 6.jpg" title="Raspberry Pancake" />
+    <a
+      href="/RaspberryPancake"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
 
-        <div>
-          <RecipesCard img="food 7.jpg" title="Beef Teriyaki" />
-          <a
-            href="/BeefTeriyaki"
-            className="mt-2 text-yellow-600 border-b border-yellow-600"
-          >
-            View Recipe
-          </a>
-        </div>
-      </div>
+  <div className="flex flex-col items-start">
+    <RecipesCard img="food 7.jpg" title="Beef Teriyaki" />
+    <a
+      href="/BeefTeriyaki"
+      className="text-yellow-600 border-b border-yellow-600 mt-2"
+    >
+      View Recipe
+    </a>
+  </div>
+</div>
 
       <div className="relative w-full mt-36" style={{ height: "350px" }}>
   <div
@@ -366,51 +367,47 @@ export default function Reader() {
 </div>
 
 
-      <div className="pt-12 px-10">
-        <FontAwesomeIcon
-          icon={faPlateWheat}
-          style={{ color: "#FE5E54", width: "13px" }}
-        />
-        <strong className="text-green-700">TastyCorner</strong>
-      </div>
-
-      <div className="pl-12 pt-8 flex">
-        <ul>
-          <li className="font-bold pr-20 ">Menu</li>
-          <li className="hover:text-green-700">
-            <a href="/reader">Home</a>
-          </li>
-          <li className=" hover:text-green-700">
-            <a href="/Recipes">Recipe</a>
-          </li>
-          <li>About Us</li>
-        </ul>
-
-        <ul>
-          <li className="font-bold pr-20 ">Categories</li>
-          <li>Breakfast</li>
-          <li>Lunch</li>
-          <li>Dinner</li>
-          <li>Dessert</li>
-          <li>Drink</li>
-        </ul>
-
-        <ul>
-          <li className="font-bold ">Social</li>
-          <li>Instagram</li>
-          <li>Twitter</li>
-          <li>Youtube</li>
-          <li>Facebook</li>
-        </ul>
-
-        <div className="flex flex-col items-center justify-center pb-16">
-          <strong className="pl-80">Sign up to Write Your Recipe</strong>
-          <a
-            href="/SignUp"
-            className="mt-6 px-8 py-2 bg-yellow-600 rounded-2xl text-white ml-[230px]"
-          >
-            Sign Up
-          </a>
+<div className="pt-12 px-4 bg-gray-100">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+          <div className="flex items-center mb-4 md:mb-0">
+            <FontAwesomeIcon
+              icon={faPlateWheat}
+              style={{ color: "#FE5E54", width: "20px" }}
+            />
+            <a href="/" className="ml-2 font-bold">TastyCorner</a>
+          </div>
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+            <ul className="list-none m-0 p-0">
+              <li className="font-bold">Menu</li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/recipes">Recipe</a></li>
+              <li><a href="/about">About Us</a></li>
+            </ul>
+            <ul className="list-none m-0 p-0">
+              <li className="font-bold">Categories</li>
+              <li>Breakfast</li>
+              <li>Lunch</li>
+              <li>Dinner</li>
+              <li>Dessert</li>
+              <li>Drink</li>
+            </ul>
+            <ul className="list-none m-0 p-0">
+              <li className="font-bold">Social</li>
+              <li><a href="https://instagram.com">Instagram</a></li>
+              <li><a href="https://twitter.com">Twitter</a></li>
+              <li><a href="https://youtube.com">YouTube</a></li>
+              <li><a href="https://facebook.com">Facebook</a></li>
+            </ul>
+          </div>
+          <div className="flex flex-col items-center mt-8">
+            <strong className="mb-4">Sign up to Write Your Recipe</strong>
+            <a
+              href="/SignUp"
+              className="px-8 py-2 bg-yellow-600 rounded-2xl text-white"
+            >
+              Sign Up
+            </a>
+          </div>
         </div>
       </div>
     </div>

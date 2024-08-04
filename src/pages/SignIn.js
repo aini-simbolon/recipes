@@ -1,119 +1,79 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlateWheat, faUser } from "@fortawesome/free-solid-svg-icons";
 import TextField from "../sections/auth/components/TextField";
-import { UseSignIn } from "../sections/auth/hooks/USeSignIn"; 
+import { UseSignIn } from "../sections/auth/hooks/USeSignIn"
 
 export default function SignIn() {
-const { errors, handleOnChange, handleSubmit, form} = UseSignIn();
+  const { errors, handleOnChange, handleSubmit, form } = UseSignIn();
 
   return (
-    <div>
-      <div className="flex">
-        <div className="pl-20 text-green-900">
-          <FontAwesomeIcon
-            icon={faPlateWheat}
-            style={{ color: "#FE5E54", width: "13px" }}
-          />
-          <strong className="text-green-700">TastyCorner</strong>
+    <div className="min-h-screen flex flex-col bg-gray-100">
+      <header className="flex flex-wrap items-center justify-between p-4 text-black shadow-md">
+        <div className="flex items-center text-black">
+          <FontAwesomeIcon icon={faPlateWheat} className="text-red-500 w-5" />
+          <strong className="text-green-700 text-lg ml-2">TastyCorner</strong>
         </div>
-        <div className="pl-80 font-bold">Home</div>
-        <div className="px-10 font-bold">Recipe</div>
-        <div className="font-bold pr-64">About Us</div>
-        <FontAwesomeIcon icon={faUser} className="pt-2 w-3 pl-48" />
-      </div>
+        <nav className="flex space-x-4 text-sm md:text-base">
+          <a href="/" className="hover:text-black-300">Home</a>
+          <a href="/Recipes" className="hover:text-black-300">Recipe</a>
+          <a href="/About" className="hover:text-black-300">About Us</a>
+          <a href="/SignIn" className="hover:text-black-300">Sign In</a>
+        </nav>
+        <FontAwesomeIcon icon={faUser} className="text-black-300 w-6" />
+      </header>
 
-      <div className="bg-white border shadow-lg p-4 rounded-2xl mt-16 mx-[470px] text-center">
-        <p className="mb-4 py-8 text-2xl text-yellow-500 font-bold">Sign In</p>
-        <form className="w-64 mx-auto">
-        <TextField
-            type="text"
-            placeholder="Email"
-            onChange={handleOnChange}
-            name="email"
-            value={form.email}
-            error={errors.email}
-            />
-
+      <main className="flex-grow flex items-center justify-center p-4">
+        <div className="bg-white border shadow-lg p-6 rounded-lg max-w-md w-full mx-auto">
+          <p className="mb-4 text-2xl text-yellow-500 font-bold text-center">Sign In</p>
+          <form className="space-y-4">
             <TextField
-            type="password"
-            placeholder="Password"
-            onChange={handleOnChange}
-            name="password"
-            value={form.password}
-            error={errors.password}
-          />
-
-        <div className="pt-8 pb-4">
+              type="text"
+              placeholder="Email"
+              onChange={handleOnChange}
+              name="email"
+              value={form.email}
+              error={errors.email}
+              className="w-full"
+            />
+            <TextField
+              type="password"
+              placeholder="Password"
+              onChange={handleOnChange}
+              name="password"
+              value={form.password}
+              error={errors.password}
+              className="w-full"
+            />
             <button
               onClick={handleSubmit}
               type="button"
-              className="w-full bg-green-700 text-white px-4 py-2  rounded-xl hover:bg-green-600">
+              className="w-full bg-green-700 text-white px-4 py-2 rounded-xl hover:bg-green-600"
+            >
               Sign In
-              </button>
-          </div>
-        </form>
-
-        <p className="text-xs">
-          Dont have Account?{" "}
-          <span className="text-yellow-500">
-            <a href="/SignUp">Sign Up</a>
-          </span>
-        </p>
-      </div>
-
-      <div className="pt-12 px-10">
-        <FontAwesomeIcon
-          icon={faPlateWheat}
-          style={{ color: "#FE5E54", width: "13px" }}
-        />
-        <strong className="text-green-700">TastyCorner</strong>
-      </div>
-
-      <div className="pl-12 pt-8 flex">
-        <ul>
-          <li className="font-bold pr-20 ">Menu</li>
-          <li className="hover:text-green-700">
-            <a href="/reader">Home</a>
-          </li>
-          <li className=" hover:text-green-700">
-            <a href="/Recipes">Recipe</a>
-          </li>
-          <li>About Us</li>
-          <li className="hover:text-green-700">
-            <a href="/SignIn">Sign In</a>
-          </li>
-          <li className="hover:text-green-700">
-            <a href="/SignUp">Sign Up</a>
-          </li>
-        </ul>
-
-        <ul>
-          <li className="font-bold pr-20 ">Categories</li>
-          <li>Breakfast</li>
-          <li>Lunch</li>
-          <li>Dinner</li>
-          <li>Dessert</li>
-          <li>Drink</li>
-        </ul>
-
-        <ul>
-          <li className="font-bold ">Social</li>
-          <li>Instagram</li>
-          <li>Twitter</li>
-          <li>Youtube</li>
-          <li>Facebook</li>
-        </ul>
-
-        <div className="flex flex-col items-center justify-center pb-16">
-          <strong className="pl-80">Sign up to Write Your Recipe</strong>
-          <a
-            href="/SignUp"
-            className="mt-6 px-8 py-2 bg-yellow-600 rounded-2xl text-white ml-[230px]"
-          >
-            Sign Up
-          </a>
+            </button>
+          </form>
+          <p className="text-xs text-center mt-4">
+            Don't have an Account?{" "}
+            <a href="/SignUp" className="text-yellow-500 hover:underline">Sign Up</a>
+          </p>
         </div>
-      </div>
+      </main>
+
+      <footer className="bg-white p-4">
+        <div className="flex flex-col items-start max-w-md mx-auto">
+          <FontAwesomeIcon icon={faPlateWheat} className="text-red-500 w-5" />
+          <strong className="text-green-700 text-lg">TastyCorner</strong>
+          <div className="flex flex-col items-start mt-4">
+            <p className="font-bold mb-2">Sign up to Write Your Recipe</p>
+            <a
+              href="/SignUp"
+              className="px-6 py-2 bg-yellow-600 rounded-2xl text-white hover:bg-yellow-500"
+            >
+              Sign Up
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

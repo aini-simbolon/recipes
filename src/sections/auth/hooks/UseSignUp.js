@@ -62,27 +62,33 @@ export const UseSignUp = () => {
     if (!isValid) {
       return;
     }
-
+  
     const toastId = toast.loading("Sign Up...");
-
-    setTimeout(async () => {
-      try {
-         await api.post("/auth/SignUp", form);
-
-        toast.success("Sign Up Success", {
-          id: toastId
-        });
-
-        router.push("/SignIn");
-      } catch (error) {
-        const msg = error.response.data.message;
-
-        toast.error(msg, {
-          id: toastId
-        })
+  
+    try {
+      const response = await api.post("/auth/SignUp", form, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+  
+      toast.success("Sign Up Success", {
+        id: toastId
+      });
+      router.push("/SignIn");
+    } catch (error) {
+      let msg = "An unexpected error occurred";
+  
+      if (error.response && error.response.data) {
+        msg = error.response.data.message || msg;
       }
-    }, 2000)
+  
+      toast.error(msg, {
+        id: toastId
+      });
+    }
   };
+  
 
   return { handleOnChange, handleSubmit, form, errors };
 };
