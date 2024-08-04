@@ -77,7 +77,7 @@ export const UseSignUp = () => {
       });
       router.push("/SignIn");
     } catch (error) {
-      let msg = "An unexpected error occurred";
+      let msg = "";
   
       if (error.response && error.response.data) {
         msg = error.response.data.message || msg;
